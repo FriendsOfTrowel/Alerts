@@ -1,0 +1,9 @@
+{
+  "name": "trowel-alerts",
+  "description": "The official Trowel Component for alerts",
+  "tags": [
+    "ui",
+    "trowel",
+    "alerts"
+  ]
+}

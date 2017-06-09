@@ -1,0 +1,32 @@
+{% set syntax = syntax|default({
+    'prefix': false,
+    'separator': {
+        'prefix': '-',
+        'element': '__',
+        'modifier': '--',
+    },
+}) %}
+
+{% set blockSelector = syntax.prefix|default(false) ? syntax.prefix ~ syntax.separator.prefix ~ 'alert' : 'alert' %}
+
+{% set modifiersClasses = '' %}
+{% for modifier in modifiers|default([]) %}
+    {% set modifiersClasses = modifiersClasses ~ ' ' ~ blockSelector ~ syntax.separator.modifier ~ modifier %}
+{% endfor %}
+
+{% set attrsGenerated = '' %}
+{% for attr_name, attr_value in attrs|default([]) %}
+    {% set attrsGenerated = attrsGenerated ~ ' ' ~ attr_name ~ '="' ~ attr_value ~ '"' %}
+{% endfor %}
+
+{% set elementSelector = blockSelector ~ syntax.separator.element %}
+
+<div class="{{ blockSelector ~ modifiersClasses }}{{ classes|default(false) ? ' ' ~ classes|join(' ') }}" role="alert" {{ attrsGenerated|raw }}>
+    {% block times %}
+        {% if times|default(false) %}
+            <button class="{{ elementSelector ~ 'times' }}" data-alert="times">&times;</button>
+        {% endif %}
+    {% endblock %}
+
+    {{ block('body') }}
+</div>

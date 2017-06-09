@@ -1,0 +1,63 @@
+/**
+ * Alerts
+ */
+
+@import 'utils/enables';
+@import 'utils/syntaxes';
+@import 'utils/trowel-variables';
+
+$alert--selector: selector(new 'alert' with $alerts--syntax);
+
+@include statement($alert--selector, (
+  ('font-size', $alerts--font-size),
+  ('font-family', $alerts--font-family),
+  ('font-weight', $alerts--font-weight),
+  ('text-transform', $alerts--text-transform),
+  ('letter-spacing', $alerts--letter-spacing),
+  ('line-height', $alerts--line-height),
+  ('text-align', $alerts--text-align),
+  ('text-decoration', $alerts--text-decoration),
+  ('margin', $alerts--margin),
+  ('padding', $alerts--padding),
+  ('border-width', $alerts--border-width),
+  ('border-style', $alerts--border-style),
+  ('border-color', $alerts--border-color),
+  ('border-radius', $alerts--border-radius),
+  ('color', $alerts--color),
+  ('box-shadow', $alerts--box-shadow),
+  ('background', $alerts--background),
+  ('background-color', $alerts--background-color),
+  ('float', $alerts--float),
+  ('width', $alerts--width),
+  ('height', $alerts--height),
+  ('max-width', $alerts--max-width),
+  ('max-height', $alerts--max-height),
+));
+
+
+@if $alerts-times--enabled {
+  $alert-times--selector: selector(set $alert--selector element 'times');
+
+  @include statement($alert-times--selector, (
+    ('position', relative),
+    ('cursor', pointer),
+    ('background', 0 0),
+    ('border', 0),
+    ('-webkit-appearance', none),
+    ('opacity', $alerts-times--opacity),
+    ('float', $alerts-times--float),
+    ('font-size', $alerts-times--font-size),
+    ('font-weight', $alerts-times--font-weight),
+    ('line-height', $alerts-times--line-height),
+    ('color', $alerts-times--color),
+    ('text-shadow', $alerts-times--text-shadow),
+    ('box-shadow', $alerts-times--box-shadow),
+    ('margin', $alerts-times--margin),
+    ('padding', $alerts-times--padding),
+    ('border-width', $alerts-times--border-width),
+    ('border-style', $alerts-times--border-style),
+    ('border-color', $alerts-times--border-color),
+    ('border-radius', $alerts-times--border-radius),
+    ('background-color', $alerts-times--background-color),
+  ));
+}

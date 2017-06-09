@@ -1,0 +1,48 @@
+{
+  "name": "trowel-alerts",
+  "homepage": "https://github.com/FriendsOfTrowel/Alerts",
+  "authors": [
+    "Loïc Goyet <loic@troopers.email>"
+  ],
+  "description": "The official Trowel Component for alerts",
+  "main": [
+    "src/scss/alerts.scss",
+    "src/twig/alert.html.twig",
+    "dest/javascript/alerts.js",
+    "injector.json"
+  ],
+  "moduleType": "globals",
+  "keywords": [
+    "scss",
+    "css",
+    "twig",
+    "html",
+    "javascript",
+    "js",
+    "trowel",
+    "trowel-alerts",
+    "alert"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    "gulpfile.babel.js",
+    "yarn.lock",
+    "package-lock.json",
+    "package.json",
+    "webpack.config.js",
+    ".babelrc",
+    "sache.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsOfTrowel/Alerts.git"
+  },
+  "dependencies": {
+    "trowel-core": "^4.0.2"
+  }
+}

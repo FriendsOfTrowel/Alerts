@@ -1,0 +1,51 @@
+$alerts--font-size: (
+  'default': trwl-theme-size('md'),
+  '-xs': trwl-theme-size('xs'),
+  '-sm': trwl-theme-size('sm'),
+  '-lg': trwl-theme-size('lg'),
+) !default;
+$alerts--font-family: trwl-theme('font-family') !default;
+$alerts--font-weight: null !default;
+$alerts--text-transform: null !default;
+$alerts--letter-spacing: null !default;
+$alerts--line-height: trwl-theme('line-height') !default;
+$alerts--text-align: null !default;
+$alerts--text-decoration: null !default;
+$alerts--margin: 0 0 1em !default;
+$alerts--padding: trwl-theme('padding-y') trwl-theme('padding-x') !default;
+$alerts--border-width: null !default;
+$alerts--border-style: null !default;
+$alerts--border-color: null !default;
+$alerts--border-radius: trwl-theme('border-radius') !default;
+$alerts--color: rgb(255, 255, 255) !default;
+$alerts--box-shadow: null !default;
+$alerts--background: null !default;
+$alerts--background-color: (
+  '-primary': trwl-theme-color('primary'),
+  '-success': trwl-theme-color('success'),
+  '-warning': trwl-theme-color('warning'),
+  '-danger': trwl-theme-color('danger'),
+) !default;
+$alerts--float: null !default;
+$alerts--width: null !default;
+$alerts--height: null !default;
+$alerts--max-width: null !default;
+$alerts--max-height: null !default;
+
+
+
+$alerts-times--opacity: null !default;
+$alerts-times--float: right !default;
+$alerts-times--font-size: inherit !default;
+$alerts-times--font-weight: null !default;
+$alerts-times--line-height: null !default;
+$alerts-times--color: inherit !default;
+$alerts-times--text-shadow: null !default;
+$alerts-times--box-shadow: null !default;
+$alerts-times--margin: null !default;
+$alerts-times--padding: 0 0 (trwl-theme('padding-y') / 2) (trwl-theme('padding-x') / 2) !default;
+$alerts-times--border-width: null !default;
+$alerts-times--border-style: null !default;
+$alerts-times--border-color: null !default;
+$alerts-times--border-radius: null !default;
+$alerts-times--background-color: null !default;
