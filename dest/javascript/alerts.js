@@ -107,14 +107,29 @@ var TrowelAlert = function () {
 
     this.element = element;
     this.timesCollection = [].slice.call(this.element.querySelectorAll('[data-alert="times"]'));
-    return this.listener();
+
+    this.events = this.events();
+    this.listener();
+    this.element.dispatchEvent(this.events.mounted);
+    return;
   }
 
   _createClass(TrowelAlert, [{
+    key: 'events',
+    value: function events() {
+      var mounted = new Event('trowel.alert.mounted');
+      var remove = new Event('trowel.alert.remove');
+      var removed = new Event('trowel.alert.removed');
+
+      return { mounted: mounted, remove: remove, removed: removed };
+    }
+  }, {
     key: 'removeAlert',
     value: function removeAlert() {
-      return this.element.remove();
-      console.log('remove alert', this.element);
+      this.element.dispatchEvent(this.events.remove);
+      this.element.remove();
+      this.element.dispatchEvent(this.events.removed);
+      return;
     }
   }, {
     key: 'listener',

@@ -10,11 +10,26 @@ class TrowelAlert {
   constructor(element) {
     this.element = element;
     this.timesCollection = [].slice.call(this.element.querySelectorAll('[data-alert="times"]'));
-    return this.listener();
+
+    this.events = this.events();
+    this.listener();
+    this.element.dispatchEvent(this.events.mounted);
+    return;
+  }
+
+  events() {
+    const mounted = new Event('trowel.alert.mounted');
+    const remove = new Event('trowel.alert.remove');
+    const removed = new Event('trowel.alert.removed');
+
+    return { mounted, remove, removed };
   }
 
   removeAlert() {
-    return this.element.remove();
+    this.element.dispatchEvent(this.events.remove);
+    this.element.remove();
+    this.element.dispatchEvent(this.events.removed);
+    return;
   }
 
   listener() {
